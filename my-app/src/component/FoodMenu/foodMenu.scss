@@ -1,0 +1,81 @@
+@use "../../scss/" as *;
+.foodMenu {
+  padding: 7rem 4rem;
+  background: black;
+}
+
+.nav-menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+  grid-template-rows: repeat(4rem, auto);
+  grid-gap: 1rem;
+}
+
+.nav-menu-item {
+  list-style: none;
+  overflow: hidden;
+  min-height: 10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: rgb(216, 216, 216);
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  overflow-wrap: break-word;
+  transition: 0.3s ease;
+}
+
+.nav-menu-item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.nav-menu-item:nth-child(2) {
+  grid-column: span 1;
+  background-color: $main-color;
+  grid-row: span 2;
+  p {
+    color: rgb(255, 255, 255);
+  }
+}
+.nav-menu-item:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 2;
+  background-color: $main-color;
+  p {
+    color: rgb(255, 255, 255);
+  }
+}
+.nav-menu-item:nth-child(8) {
+  grid-column: span 2;
+  background-color: $main-color;
+  grid-row: span 1;
+  p {
+    color: rgb(255, 255, 255);
+  }
+}
+.nav-menu-item:nth-child(9) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.nav-menu-item:nth-child(11) {
+  grid-column: span 1;
+  grid-row: span 2;
+  background-color: $main-color;
+  p {
+    color: rgb(255, 255, 255);
+  }
+}
+.nav-menu-item:hover {
+  background-color: transparent;
+  transform: scale(1.1);
+}
+
+.nav-menu-link {
+  text-decoration: none;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $main-color;
+  border-radius: 0.5rem;
+  height: 100%;
+}

@@ -1,0 +1,38 @@
+@use "../../scss/" as *;
+
+.popilar-dishes {
+  background: #000;
+
+  &__header {
+    text-align: center;
+    background: $bgmain-color;
+  }
+  &__content {
+    display: grid;
+    gap: 15px;
+    padding: 1rem 0rem 4rem 0rem;
+    grid-template-columns: 1fr 1fr;
+    &__item {
+      background: white;
+      @include flex(center, center);
+      padding: 10px;
+      h1 {
+        font-size: 20px;
+      }
+      p {
+        font-size: 14px;
+        color: rgb(189, 189, 189);
+      }
+      cursor: pointer;
+      transition: 0.7s ease;
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+    span {
+      margin-left: 20px;
+      color: black;
+      font-size: 30px;
+    }
+  }
+}

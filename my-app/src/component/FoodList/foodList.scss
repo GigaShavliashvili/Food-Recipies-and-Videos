@@ -1,0 +1,52 @@
+@use "../../scss/" as *;
+
+.foodlist__section {
+  position: relative;
+  overflow-y: hidden;
+  &__content {
+    width: 100%;
+    background: white;
+    padding: 1rem 5rem;
+    margin-top: 22rem;
+    @include tablet {
+      padding: 1rem 3rem;
+    }
+
+    @include mobile {
+      padding: 1rem 1rem;
+    }
+
+    &__item {
+      & .foodlist__header {
+        padding: 1rem 0;
+        @include flex(center, space-between);
+        h3 {
+          color: $main-color;
+          font-size: 20px;
+          font-weight: 400;
+        }
+        & .foodlist__btn {
+          padding: 7px 10px;
+        }
+      }
+    }
+
+    &__slider {
+      width: 25%;
+      @include tablet {
+        width: 30%;
+      }
+
+      @include mobile {
+        width: 40%;
+      }
+    }
+  }
+}
+
+.video {
+  width: 100%;
+  transform: translateY(-5rem);
+  z-index: -1;
+  position: absolute;
+}

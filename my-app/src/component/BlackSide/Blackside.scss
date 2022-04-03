@@ -1,0 +1,24 @@
+@use "../../scss/" as *;
+
+.blackside {
+  margin-top: 3rem;
+  background: #000000;
+  padding: 0rem 9rem;
+}
+.bleckside__banner {
+  @include flex(center, center);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 150vh;
+  background-repeat: no-repeat;
+  &__content {
+    p {
+      font-size: 30px;
+    }
+    h1 {
+      color: $main-color;
+      font-size: 60px;
+    }
+  }
+}

@@ -1,0 +1,69 @@
+@use "../../scss/" as *;
+.menu-bar {
+  border-radius: 25px;
+  height: fit-content;
+  display: inline-flex;
+  background-color: rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  align-items: center;
+  padding: 0 10px;
+
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+
+  li {
+    list-style: none;
+    color: white;
+    font-weight: 400;
+    padding: 10px 14px;
+    margin: 0 6px;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: -1;
+      transition: 0.2s ease;
+      border-radius: 10px;
+    }
+    &:hover {
+      &::before {
+        background: linear-gradient(to bottom, #e8edec, #5dc4ff);
+
+        transform: scale(1.1);
+      }
+
+      color: black;
+    }
+    @include bigtablet {
+      &::before {
+        display: none;
+      }
+      &:hover {
+        display: none;
+      }
+    }
+  }
+
+  .active {
+    color: black;
+    &::before {
+      background: linear-gradient(to bottom, #e8edec, #5dc4ff);
+      box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.479);
+      transform: scale(1.1);
+    }
+  }
+  @include bigtablet {
+    .active {
+      display: none;
+    }
+  }
+}

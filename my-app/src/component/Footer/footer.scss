@@ -1,0 +1,50 @@
+@use "../../scss/" as *;
+
+.footer {
+  position: relative;
+  padding: 4rem 2rem 4rem 2rem;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: black;
+  @include mobile {
+    padding-bottom: 3rem;
+  }
+}
+
+.footer__content {
+  &__logo {
+    @include flex(center, center);
+  }
+  &__menus {
+    z-index: 34;
+    position: relative;
+    padding: 1rem 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    gap: 20px;
+    place-items: center;
+
+    @include mobile {
+      grid-template-columns: repeat(2, minmax(10rem, 1fr));
+    }
+  }
+  &__menu a {
+    display: block;
+
+    margin: 10px 0px;
+  }
+
+  &__icons {
+    @include flex(center, center);
+    color: white;
+    margin-top: 20px;
+
+    & .icon {
+      padding: 0.7rem;
+      background: black;
+      margin: auto 10px;
+    }
+  }
+}

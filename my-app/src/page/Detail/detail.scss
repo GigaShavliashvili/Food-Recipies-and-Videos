@@ -1,0 +1,136 @@
+@use "../../scss/" as *;
+
+.Detail {
+  padding: 7rem 10rem 2rem 10rem;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  @include tablet {
+    padding: 7rem 5rem 2rem 5rem;
+  }
+  @include mobile {
+    padding: 7rem 2rem 2rem 2rem;
+  }
+  &__wrapper {
+    background: white;
+    padding: 2rem;
+    position: relative;
+    &__row1 {
+      @include flex(unset, center);
+      flex-wrap: wrap;
+      gap: 2rem;
+      &__image {
+        min-width: 25rem;
+        flex: 1;
+        text-align: center;
+        img {
+          width: 100%;
+          max-width: 25rem;
+          border-radius: 50%;
+          box-shadow: 1px 2px 5px 1px rgb(189, 189, 189);
+        }
+      }
+      &__content {
+        margin-top: 2rem;
+        flex: 1;
+        min-width: 25rem;
+        & .stars {
+          color: rgb(255, 174, 0);
+          margin-top: 10px;
+        }
+        span {
+          margin-top: 10px;
+          color: $main-color;
+          margin-left: 10px;
+          font-weight: 400;
+          cursor: pointer;
+        }
+        p {
+          font-size: 14px;
+          font-weight: 400;
+          color: rgb(56, 56, 56);
+        }
+      }
+    }
+    & .ingredients {
+      width: 100%;
+      text-align: center;
+      margin: 1rem;
+    }
+    &__ingredient {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      gap: 2rem 2rem;
+      text-align: center;
+      place-items: center;
+      &__item {
+        img {
+          width: 100%;
+          min-width: 10rem;
+        }
+      }
+    }
+  }
+}
+.jagged-border {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  height: 2px;
+  left: 0;
+  filter: drop-shadow(rgba(0, 0, 0, 0.3));
+}
+.jagged-border:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 10px;
+}
+
+.white-bg {
+  background: rgb(255, 255, 255);
+}
+.white-bg:before {
+  background: linear-gradient(
+      45deg,
+      transparent 33.333%,
+      #fff 33.333%,
+      #fff 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 33.333%,
+      #fff 33.333%,
+      #fff 66.667%,
+      transparent 66.667%
+    );
+  background-size: 20px 40px;
+}
+.VideoWrapper {
+  text-align: center;
+  margin-top: 2rem;
+  h2 {
+    color: $main-color;
+  }
+  iframe {
+    width: 700px;
+    margin-top: 10px;
+    height: 400px;
+    @include tablet {
+      width: 600px;
+      height: 300px;
+    }
+    @include bigtablet {
+      width: 400px;
+      height: 200px;
+    }
+    @include mobile {
+      width: 300px;
+      height: 200px;
+    }
+  }
+}

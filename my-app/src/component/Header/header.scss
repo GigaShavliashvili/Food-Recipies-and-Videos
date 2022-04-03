@@ -1,0 +1,87 @@
+@use "../../scss/" as *;
+
+.header {
+  height: 5rem;
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  padding: 0 4rem;
+  .MenuIcon {
+    display: none;
+  }
+  @include flex(center, center);
+
+  @include tablet {
+    padding: 0 2rem;
+  }
+  @include mobile {
+    padding: 0 1rem;
+  }
+  @include bigtablet {
+    &__nav {
+      display: none;
+    }
+    & .active {
+      display: block;
+      height: 100vh;
+      position: absolute;
+      padding: $header-height;
+      top: 0;
+      right: 0;
+      width: 100%;
+      z-index: -1;
+      background: rgba(0, 0, 0, 0.287);
+      ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 30px;
+        text-align: center;
+      }
+    }
+    .MenuIcon {
+      display: block;
+      height: 1rem;
+      width: 1rem;
+      @include flex(center, center);
+    }
+  }
+  &__logo {
+    flex: 2;
+  }
+
+  &__nav {
+    flex: 1;
+
+    ul {
+      @include flex(center, center);
+
+      li {
+        margin: 0px 10px;
+
+        @include mobile {
+          margin: 0px 5px;
+        }
+      }
+    }
+  }
+
+  &__logo {
+    @include flex(center, unset);
+
+    span {
+      cursor: pointer;
+      margin-left: 10px;
+      font-size: 17px;
+      color: #0799ee;
+    }
+  }
+}
+.shrink {
+  background: white;
+  box-shadow: $box-shadow;
+}
+.black-shrink {
+  background: rgba(0, 0, 0, 0.698);
+}

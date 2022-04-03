@@ -1,0 +1,47 @@
+@use "../../scss/" as *;
+
+.about {
+  color: black;
+  @include flex(center, center);
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  &__image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    flex: 1;
+    min-width: 30rem;
+    padding: 15rem 0;
+  }
+  &__content {
+    flex: 1;
+    h1 {
+      font-weight: 400;
+    }
+    p {
+      margin-top: 20px;
+      color: rgb(148, 148, 148);
+      font-weight: 400;
+    }
+    .about-btn {
+      margin-top: 20px;
+    }
+    &__icons {
+      margin-top: 20px;
+
+      @include flex(center, unset);
+      & .about-icon {
+        text-align: center;
+        padding: 2rem;
+        margin: 0px 1rem 0 0;
+        background: rgba(168, 233, 243, 0.39);
+        border-radius: 10px;
+        p {
+          color: black;
+          margin-top: 0px;
+        }
+      }
+    }
+  }
+}

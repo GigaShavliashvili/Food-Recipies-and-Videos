@@ -1,0 +1,91 @@
+@use "./scss/" as *;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  @include tablet {
+    font-size: 80%;
+  }
+  @include mobile {
+    font-size: 60%;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $main-color;
+  border-radius: 20px;
+}
+
+body {
+  font-family: $font-family;
+  font-weight: 400;
+  color: $txt-color;
+  max-width: 1368px;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+ul {
+  list-style: none;
+}
+
+.section {
+  padding: 2rem 4rem;
+  @include bigtablet {
+    padding: 1rem 2rem;
+  }
+  @include mobile {
+    padding: 1rem;
+  }
+}
+
+.Contact-Us {
+  padding: 1rem;
+  background: $main-color;
+  border-radius: 20px;
+  position: fixed;
+  cursor: pointer;
+  z-index: 100;
+  bottom: 20px;
+  left: 20px;
+  transition: 0.5s ease;
+  @include flex(center, center);
+  h2 {
+    font-weight: 400;
+    margin-left: 10px;
+    transform: translateY(-2px);
+  }
+  &:hover {
+    background: black;
+    transform: scale(1.1);
+  }
+
+  &__icon {
+    animation: PhoneAnimation 1s infinite;
+    @keyframes PhoneAnimation {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(10px);
+      }
+      0% {
+        transform: translateX(0);
+      }
+    }
+  }
+}
